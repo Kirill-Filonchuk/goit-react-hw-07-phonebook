@@ -1,15 +1,11 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { selectContacts, selectFilter } from 'redux/selectors';
+import { selectRenderContacts } from 'redux/selectors';
 import { deleteContact } from 'redux/operations';
-import { getRenderContacts } from './helpersFunction';
 
 import s from './ContactList.module.css';
 
 export const ContactList = () => {
-  const contacts = useSelector(selectContacts);
-  const filterStateData = useSelector(selectFilter);
-  // console.log(contacts);
-  const contactsToRender = getRenderContacts(contacts, filterStateData);
+  const renderContacts = useSelector(selectRenderContacts);
 
   const dispatch = useDispatch();
 
@@ -20,7 +16,7 @@ export const ContactList = () => {
 
   return (
     <ul className={s.list}>
-      {contactsToRender.map(({ name, phone, id }) => (
+      {renderContacts.map(({ name, phone, id }) => (
         <li key={id} className={s.item}>
           {name}:<span>{phone}</span>
           <button
