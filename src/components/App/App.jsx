@@ -14,10 +14,6 @@ export const App = () => {
   useEffect(() => {
     dispatch(fetchContacts());
   }, [dispatch]);
-
-  // const contacts = useSelector((state) => { console.log(state.contacts.items,'useSelector'); return state.contacts.items });
-  // console.log(contacts,'APP_JS')
-
   return (
     <div className="container">
       <h1>Phonebook</h1>

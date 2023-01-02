@@ -1,5 +1,3 @@
-/*eslint-env es6*/
-
 import { useSelector, useDispatch } from 'react-redux';
 import { selectContacts } from 'redux/selectors';
 import { addContact } from 'redux/operations';
@@ -14,10 +12,9 @@ export const ContactForm = () => {
     const form = event.target;
     const name = form.elements[0].value;
     const phone = form.elements[1].value;
-    // console.log(name, number);
-    // console.log(contacts)
+
     const checkName = name.toLowerCase();
-    // console.log(checkName)
+
     if (
       contacts.some(
         contactItem => contactItem.name.toLowerCase() === `${checkName}`
@@ -40,8 +37,6 @@ export const ContactForm = () => {
         pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
         title="Имя может состоять только из букв, апострофа, тире и пробелов. Например Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan и т. п."
         required
-        // value={name}
-        // onChange={handleChange}
       />
       Number
       <input
@@ -50,8 +45,6 @@ export const ContactForm = () => {
         pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
         title="Номер телефона должен состоять цифр и может содержать пробелы, тире, круглые скобки и может начинаться с +"
         required
-        // value={number}
-        // onChange={handleChange}
       />
       <button type="submit" className={s.btnForm}>
         Add contact
