@@ -10,7 +10,6 @@ export const ContactList = () => {
   const dispatch = useDispatch();
 
   const onDeleteCont = id => {
-    console.log(id, '<---- id delete');
     dispatch(deleteContact(id));
   };
 

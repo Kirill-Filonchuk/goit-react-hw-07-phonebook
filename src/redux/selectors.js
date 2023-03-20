@@ -16,18 +16,3 @@ export const selectRenderContacts = createSelector(
     return contactsToRender;
   }
 );
-
-// export const selectRenderContacts = state => {
-//   const contactsFromState = selectContacts(state);//*
-//   const filterState = selectFilter(state);//*
-//   const normalizeFilterState = filterState.toLowerCase();
-//   const contactsToRender = contactsFromState.filter(({ name }) => {
-//     // console.log(name, 'contact.name');
-//     return name.toLowerCase().includes(normalizeFilterState);
-//   });
-
-//   return contactsToRender;
-// };
-// /////
-// export const getContacts = state => state.phoneBook.contacts;
-// export const getFilter = state => state.phoneBook.filter;
